@@ -1,0 +1,389 @@
+:root {
+  --cor-1: #081B23;
+  --cor-2: #144C66;
+  --cor-3: #124AB1;
+  --cor-4: #2789B7;
+  --cor-5: #C7C7C7;
+
+}
+
+/*Configurações NavBar*/
+.navbar {
+  background: #000 url(../images/background-home.jpg) center center;
+  background-size: cover;
+  padding: 0 10vw;
+  box-shadow: 0px 2px 5px #0000002a;
+}
+
+.navbar-brand img {
+  width: 200px;
+  height: 200px;
+  margin-left: -25px;
+}
+
+.navbar-nav {
+  text-indent: 10px;
+  text-align: right;
+}
+
+.nav-link {
+  font-size: 1.2em;
+  margin-right: 20px;
+  color: #fff;
+}
+
+#login-text {
+  display: none;
+}
+
+.navbar-text img {
+  background-color: var(--cor-3);
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.btn {
+  background-color: var(--cor-3);
+}
+
+.navbar-text img:hover {
+  background-color: #0b5ed7;
+}
+
+/* Modal */
+.modal-container {
+  color: #fff;
+  margin: 50px 0 100px 0;
+  gap: 10px;
+}
+
+.modal-container h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.modal-container p {
+  font-size: 20px;
+}
+
+
+.modal-container button {
+  border-radius: 30px;
+  border: 0;
+  box-shadow: 0px 2px 5px #0000002a;
+  transition: .4s;
+}
+
+.modal-container button:hover {
+  background-color: #0b5ed7;
+}
+
+/* Corpo da Página */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*Cards dos profissionais*/
+.container-cards {
+  margin: 25px;
+}
+
+.card-custom {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: #ffffff;
+  padding: 24px;
+}
+
+.card-custom:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.profile-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #eee;
+}
+
+.card-custom strong {
+  font-size: 1.1rem;
+}
+
+.card-custom small {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.btnSeeProfile {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.btnSeeProfile:hover {
+  background-color: #0056b3;
+}
+
+/*Cards das areas*/
+.icon-category {
+  width: 70px;
+  height: 70px;
+  background-color: #f1f5f9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #0d6efd;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.icon-category:hover {
+  background-color: #e2e8f0;
+}
+
+/*Linhas Decorativas background*/
+
+.depoiments {
+  background: linear-gradient(to right, #89abc7, var(--cor-2));
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 15px;
+}
+
+/*Cards de Depoimentos*/
+.testimonial-card {
+  background-color: #ffffff;
+  height: 300px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(255, 38, 38, 0.05);
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-stars {
+  color: #f1c40f;
+  font-size: 1rem;
+}
+
+.user-info {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+
+/*Convite para se tornar profissional*/
+
+/* Container principal do convite */
+.invitation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin: 20px 5%;
+}
+
+.image-section {
+  width: 100%;
+}
+
+.image-section img {
+  max-width: 100%;
+  border-radius: 10px;
+  display: block;
+  margin: 5px auto;
+}
+
+.text-section {
+  flex: 1.5;
+  padding-left: 30px;
+}
+
+.text-section h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.text-section p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+/* Botão */
+.cta-button {
+  background-color: var(--cor-3);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background-color: #0b5ed7;
+}
+
+/* FAQ */
+
+.section-faq {
+  padding: 60px 20px;
+  width: 100%;
+  margin: auto;
+}
+
+.title-faq {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: var(--cor-2, #144C66);
+}
+
+.button-faq {
+  background-color: #f0f4f8;
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 16px;
+  border-radius: 10px;
+  padding: 18px 20px;
+  transition: background-color 0.3s ease;
+  box-shadow: none;
+}
+
+.button-faq:not(.collapsed) {
+  background-color: #e6edf3;
+  color: #144C66;
+  box-shadow: inset 0 -2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.item-faq {
+  border: none;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.item-faq:hover {
+  transform: scale(1.01);
+}
+
+.response-faq {
+  background-color: #ffffff;
+  color: #333;
+  padding: 20px;
+  font-size: 1rem;
+  border-top: 1px solid #e2e6ea;
+  line-height: 1.6;
+}
+
+.accordion-button::after {
+  transition: transform 0.3s ease;
+}
+
+.accordion-button:not(.collapsed)::after {
+  transform: rotate(180deg);
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+/* Footer */
+footer {
+  background-color: var(--cor-2);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer .small {
+  margin-top: 5px;
+}
+
+.social-media-icons img {
+  height: 45px;
+  width: 45px;
+}
+
+/* Responsividade */
+@media screen and (min-width: 576px) {
+  .modal-container h1 {
+    font-size: 3em;
+  }
+
+  .modal-container p {
+    font-size: 25px;
+  }
+
+  .categories-container .card-text {
+    font-size: 1.3em;
+  }
+
+  .button-faq {
+    font-size: 1.05rem;
+  }
+
+  .title-faq {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .invitation {
+    flex-direction: row;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+  }
+
+  .text-section {
+    padding-left: 0;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .image-section {
+    flex: 1;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .section-faq {
+    width: 940px;
+  }
+}

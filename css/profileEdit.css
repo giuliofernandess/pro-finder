@@ -1,0 +1,43 @@
+        main {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-group textarea {
+            background-color: #d2d2d2;
+            height: 100px;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .form-control {
+            margin-bottom: 15px;
+        }
+
+        .btn-update {
+            background-color: #ff5722;
+            border: none;
+            color: white;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .nav-tabs .nav-link.active {
+            font-weight: bold;
+        }

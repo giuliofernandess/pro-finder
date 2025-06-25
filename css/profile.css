@@ -1,0 +1,84 @@
+body {
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profile-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.profile-header img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid #105b7e;
+    margin-bottom: 15px;
+}
+
+.info-item {
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: #f9fafb;
+    text-align: left;
+}
+
+.info-item strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.btn-action-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-action-group a {
+    flex: 1 1 45%;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: #105b7e;
+}
+
+.btn-full {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: #105b7e;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.btn-full:hover {
+    background-color: #084298;
+}
+
+@media (max-width: 576px) {
+    .btn-action-group {
+        flex-direction: column;
+    }
+
+    .btn-action-group a {
+        flex: 1 1 100%;
+    }
+}
