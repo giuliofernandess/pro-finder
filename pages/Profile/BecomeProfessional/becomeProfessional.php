@@ -7,13 +7,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Profissional - ProFinder</title>
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <script src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap-select.min.css">
-    <script src="js/bootstrap-select.min.js"></script>
-    <link rel="stylesheet" href="css/form.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+    <script src="../../../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../../css/bootstrap-select.min.css">
+    <script src="../../../js/bootstrap-select.min.js"></script>
+    <link rel="stylesheet" href="../../../css/form.css">
+    <link rel="stylesheet" href="../../../css/style.css">
     <style>
         body,
         html {
@@ -25,6 +25,10 @@
         }
         
         @media screen and (min-width: 768px) {
+            body {
+                padding-bottom: 30px;
+            }
+
             .form-box {
                 width: 450px;
             }
@@ -36,7 +40,7 @@
 
     <!-- Logo -->
     <div class="logo">
-        <a href="index.php"><img src="images/logo.png" alt="Logo"></a>
+        <a href="../../index.php"><img src="../../../images/logo.png" alt="Logo"></a>
     </div>
 
     <!-- Form Container -->

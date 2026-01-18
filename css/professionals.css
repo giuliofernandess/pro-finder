@@ -103,21 +103,3 @@ main {
   border-color: inherit;
   text-decoration: none;
 }
-
-/* Rodapé */
-
-footer {
-  background-color: var(--cor-2);
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-}
-
-footer .small {
-  margin-top: 5px;
-}
-
-.social-media-icons img {
-  height: 45px;
-  width: 45px;
-}

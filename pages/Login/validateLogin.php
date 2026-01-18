@@ -4,7 +4,7 @@
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$connect = mysqli_connect('localhost', 'root', '', 'pro-finder') or die('Erro de conexão'. mysqli_connect_error());
+require_once '../../general_features/bdConnect.php';
 
 $sql = "SELECT * FROM `accounts` WHERE `email` = '$email' and `password` = '$password'";
 
@@ -27,7 +27,7 @@ if (mysqli_num_rows($result) > 0) {
     alert('Login efetuado!');
     </script>";
 
-    echo "<meta http-equiv='refresh' content='0; url=index.php'>";
+    echo "<meta http-equiv='refresh' content='0; url=../index.php'>";
 
 } else {
     echo "<script type ='text/javascript'>

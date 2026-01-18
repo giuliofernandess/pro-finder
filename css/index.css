@@ -39,8 +39,8 @@
 .navbar-text img {
   background-color: var(--cor-3);
   border-radius: 50%;
-  height: 70px;
-  width: 70px;
+  height: 55px;
+  width: 55px;
   padding: 10px;
   cursor: pointer;
 }
@@ -321,23 +321,6 @@ main {
 
 .accordion-button:focus {
   box-shadow: none;
-}
-
-/* Footer */
-footer {
-  background-color: var(--cor-2);
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-}
-
-footer .small {
-  margin-top: 5px;
-}
-
-.social-media-icons img {
-  height: 45px;
-  width: 45px;
 }
 
 /* Responsividade */

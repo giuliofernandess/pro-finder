@@ -33,7 +33,7 @@ $city = $_POST['cities'];
 $password = $_POST['password'];
 $confirmPassword = $_POST['confirmPassword'];
 
-$connect = mysqli_connect('localhost', 'root', '', 'pro-finder') or die('Erro de conexão'. mysqli_connect_error());
+require_once '../../general_features/bdConnect.php';
 
 $sql = "SELECT * FROM `accounts` WHERE `email` = '$email'";
 
@@ -76,7 +76,7 @@ if (mysqli_num_rows($result) > 0) {
     alert('Seus dados foram cadastrados!');
     </script>";
 
-    echo "<meta http-equiv='refresh' content='0; url=login.php'>";
+    echo "<meta http-equiv='refresh' content='0; url=../Login/login.php'>";
 }
 
 ?>

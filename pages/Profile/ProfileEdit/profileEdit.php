@@ -5,7 +5,7 @@ session_start();
 
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
-    $connect = mysqli_connect('localhost', 'root', '', 'pro-finder') or die('Erro de conexão: '. mysqli_connect_error());
+    require_once '../../../general_features/bdConnect.php';
     $sql = "SELECT * FROM `accounts` WHERE `email` = '$email'";
     $result = $connect->query($sql);
     $res = $result->fetch_array();
@@ -24,7 +24,7 @@ if (isset($_SESSION['email'])) {
     }
 
 } else {
-    echo "<meta http-equiv='refresh' content='0; url=index.php'>";
+    echo "<meta http-equiv='refresh' content='0; url=../../index.php'>";
 }
 
 ?>
@@ -36,17 +36,17 @@ if (isset($_SESSION['email'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Editar Perfil - Pro Finder</title>
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    <script src="js/jquery.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <script src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap-select.min.css">
-    <script src="js/bootstrap-select.min.js"></script>
-    <script src="js/inputMask.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/profileEdit.css">
+    <script src="../../../js/jquery.js"></script>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+    <script src="../../../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../../css/bootstrap-select.min.css">
+    <script src="../../../js/bootstrap-select.min.js"></script>
+    <script src="../../../js/inputMask.js"></script>
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/profileEdit.css">
     <style>
         body {
             background-image: none;
@@ -145,10 +145,10 @@ if (isset($_SESSION['email'])) {
                     <label for="file">Foto de Perfil</label><br>
                     <input type="file" name="file" class="form-control" id="inputFile" accept="image/*">
             </div>
-            <button type="submit" class="btn btn-primary w-100">Enviar</button>
+            <button type="submit" class="btn btn-primary w-100">Editar</button>
         </form>
 
-        <form action="deleteProfile.php" method="post">
+        <form action="DeleteProfile/deleteProfile.php" method="post">
             <input type="hidden" name="id_professional" id="id_professional" value="<?php echo printProfessional(6); ?>">
             <button type="submit" class="btn btn-danger w-100 mt-3">Excluir Perfil</button>
         </form>
@@ -170,7 +170,7 @@ if (isset($_SESSION['email'])) {
 
             function loadInformations(type, cat_id = '') {
                 $.ajax({
-                    url: "loadInformations.php",
+                    url: "../../../general_features/loadInformations.php",
                     method: "POST",
                     data: { type: type, cat_id: cat_id },
                     dataType: "json",

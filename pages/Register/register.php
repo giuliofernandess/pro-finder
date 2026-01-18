@@ -5,21 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cadastro - ProFinder</title>
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <script src="js/jquery.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <script src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap-select.min.css">
-    <script src="js/bootstrap-select.min.js"></script>
-    <link rel="stylesheet" href="css/form.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+    <script src="../../js/jquery.js"></script>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <script src="../../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../css/bootstrap-select.min.css">
+    <script src="../../js/bootstrap-select.min.js"></script>
+    <link rel="stylesheet" href="../../css/form.css">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 
 <body>
 
     <!-- Logo -->
     <div class="logo">
-        <a href="index.php"><img src="images/logo.png" alt="Logo Pro Finder"></a>
+        <a href="../index.php"><img src="../../images/logo.png" alt="Logo Pro Finder"></a>
     </div>
 
     <!-- Form Container -->
@@ -73,7 +73,7 @@
         </form>
 
         <div class="footer-text">
-            Já possui uma conta? <a href="login.php">Acesse</a>
+            Já possui uma conta? <a href="../Login/login.php">Acesse</a>
         </div>
     </div>
 
@@ -94,7 +94,7 @@
 
             function loadInformations(type, cat_id = '') {
                 $.ajax({
-                    url: "loadInformations.php",
+                    url: "../../general_features/loadInformations.php",
                     method: "POST",
                     data: { type: type, cat_id: cat_id },
                     dataType: "json",

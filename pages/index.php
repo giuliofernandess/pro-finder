@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProFinder</title>
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" rel="stylesheet" />
-    <link href="css/index.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="../css/index.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
 </head>
 
 <body onload="adaptLogin()" onresize="adaptLogin()">
@@ -20,7 +21,7 @@
         <!-- NavBar -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark d-flex flex-column align-items-start">
             <div class="container-fluid p-0">
-                <a class="navbar-brand" href="#"><img src="images/logo.png" alt="Logo ProFinder"></a>
+                <a class="navbar-brand" href="#"><img src="../images/logo.png" alt="Logo ProFinder"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -31,10 +32,10 @@
                             <a class="nav-link" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="professionals.php">Profissionais</a>
+                            <a class="nav-link" href="Professionals/professionals.php">Profissionais</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="support.php">Suporte</a>
+                            <a class="nav-link" href="Support/support.php">Suporte</a>
                         </li>
 
                         <?php
@@ -43,21 +44,21 @@
 
                         if (isset($_SESSION['email'])) {
                             echo '<li class="nav-item" id="loginText">
-                                <a class="nav-link" href="profile.php">Perfil</a>
+                                <a class="nav-link" href="Profile/profile.php">Perfil</a>
                             </li>
                         </ul>
                     </div>
                     <span class="navbar-text" id="loginImage">
-                        <a href="profile.php"><img src="images/icon-person.png" alt="Ícone Login"></a>
+                        <a href="Profile/profile.php"><img src="../images/icon-person.png" alt="Ícone Login"></a>
                     </span>';
                         } else {
                             echo '<li class="nav-item" id="loginText">
-                                <a class="nav-link" href="login.php">Login</a>
+                                <a class="nav-link" href="Login/login.php">Login</a>
                             </li>
                         </ul>
                     </div>
                     <span class="navbar-text" id="loginImage">
-                        <a href="login.php"><img src="images/icon-person.png" alt="Ícone Login"></a>
+                        <a href="Login/login.php"><img src="../images/icon-person.png" alt="Ícone Login"></a>
                     </span>';
                         }
 
@@ -69,7 +70,7 @@
                 <div class="container-fluid d-flex flex-column align-items-start modal-container p-0">
                     <h1 class="head title">Conecte-se com os melhores profissionais</h1>
                     <p class="head-paragraph">Encontre especialistas em saúde, tecnologia, educação, e muito mais</p>
-                    <a href="professionals.php"><button type="button" class="btn btn-primary btn-lg">Explorar Agora</button></a>
+                    <a href="Professionals/professionals.php"><button type="button" class="btn btn-primary btn-lg">Explorar Agora</button></a>
                 </div>
         </nav>
 
@@ -83,7 +84,7 @@
             <h5 class="mb-4 fw-semibold">Profissionais Destaques</h5>
             <div class="row g-3">
                 <?php
-                    $connect = mysqli_connect("localhost", "root", "", "pro-finder");
+                    require_once '../general_features/bdConnect.php';
 
                     $sql = "SELECT professional.profession, accounts.name, accounts.profile_image, professional.id_professional FROM professional INNER JOIN accounts ON professional.id_professional = accounts.id_professional LIMIT 4";
 
@@ -94,11 +95,11 @@
                         $id_professional = $res['id_professional'];
                 ?>
                     <div class="col-12 col-md-6">
-                        <form method="post" action="professionalProfile.php" class="card card-custom p-3 d-flex flex-row align-items-center">
+                        <form method="post" action="Professionals/professionalProfile.php" class="card card-custom p-3 d-flex flex-row align-items-center">
                             <?php if (empty($res['profile_image'])): ?>
-                                <img src="images/anonymous-user.jpg" alt="Foto de Perfil" class="profile-img me-3">
+                                <img src="../images/anonymous-user.jpg" alt="Foto de Perfil" class="profile-img me-3">
                             <?php else: ?>
-                                <img src="images/profile-images/<?php echo $res['profile_image'] ?>" alt="img" class="profile-img me-3">
+                                <img src="../images/profile-images/<?php echo $res['profile_image'] ?>" alt="img" class="profile-img me-3">
                             <?php endif; ?>
                             <div class="flex-grow-1">
                                 <input type="hidden" name="id_professional" value="<?php echo $id_professional ?>">
@@ -116,7 +117,7 @@
                                 if (isset($_SESSION['email'])) { ?>
                                      <button class="btn btnSeeProfile">Ver Perfil</button>
                                 <?php } else { ?>
-                                     <a href="login.php" class="btn btnSeeProfile">Ver Perfil</a>
+                                     <a href="Login/login.php" class="btn btnSeeProfile">Ver Perfil</a>
                                 <?php } ?>
                                  
                         </form>
@@ -183,7 +184,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="testimonial-card">
                             <div class="d-flex align-items-center mb-2">
-                                <img src="images/anonymous-user.jpg" alt="img" class="profile-img me-3">
+                                <img src="../images/anonymous-user.jpg" alt="img" class="profile-img me-3">
                                 <div>
                                     <p class="user-info mb-0">Nayara</p>
                                 </div>
@@ -200,7 +201,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="testimonial-card">
                             <div class="d-flex align-items-center mb-2">
-                                <img src="images/anonymous-user.jpg" alt="img" class="profile-img me-3">
+                                <img src="../images/anonymous-user.jpg" alt="img" class="profile-img me-3">
                                 <div>
                                     <p class="user-info mb-0">Andressa</p>
                                 </div>
@@ -216,7 +217,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="testimonial-card">
                             <div class="d-flex align-items-center mb-2">
-                                <img src="images/anonymous-user.jpg" alt="img" class="profile-img me-3">
+                                <img src="../images/anonymous-user.jpg" alt="img" class="profile-img me-3">
                                 <div>
                                     <p class="user-info mb-0">Juliana</p>
                                 </div>
@@ -245,7 +246,7 @@
                     site e tenha um perfil profissional em destaque na nossa plataforma. Alcance mais pessoas e
                     transforme sua carreira!
                 </p>
-                <a href="register.php" class="cta-button">Cadastre-se e seja encontrado</a>
+                <a href="Register/register.php" class="cta-button">Cadastre-se e seja encontrado</a>
             </div>
         </div>
 
@@ -310,27 +311,15 @@
 
     </main>
 
-    <!-- Rodapé -->
-    <footer>
-        <div class="social-media-icons">
-            <span class="icon-instagram"><a href="#"><img src="images/footer/icon-instagram.png"
-                        alt="Icon Instagram"></a></span>
-            <span class="icon-tiktok"><a href="#"><img src="images/footer/icon-tiktok.png" alt="Icon Tiktok"></a></span>
-            <span class="icon-twitter-x"><a href="#"><img src="images/footer/icon-x.png" alt="Icon X"></a></span>
-        </div>
-        <div class="small">Info - Suporte - Marketing</div>
-        <div class="small">Termos de uso - Política de Privacidade</div>
-        <div class="small">© 2025 ProFinder</div>
-    </footer>
+    <!-- Footer -->
+    <?php require_once '../general_features/footer.php' ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
         </script>
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
+    
     <!-- Funções JavaScript -->
-    <script src="scripts/adaptLogin.js"></script>
+    <script src="../js/adaptLogin.js"></script>
 </body>
 
 </html>

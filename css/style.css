@@ -10,3 +10,40 @@
     font-family: "Montserrat", sans-serif;
     box-sizing: border-box;
 }
+
+/* Footer */
+footer {
+  background-color: var(--cor-2);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer .small {
+  margin-top: 5px;
+}
+
+/* Ícones das redes sociais no footer */
+.social-media-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.social-media-icons a {
+  text-decoration: none;
+}
+
+.social-media-icons i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background-color: #ffffff;
+  color: var(--cor-2);
+  font-size: 1.3rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}

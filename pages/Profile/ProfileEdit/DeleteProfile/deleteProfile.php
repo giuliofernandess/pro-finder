@@ -6,7 +6,7 @@ session_unset();
 
 session_destroy();
 
-$connect = mysqli_connect('localhost', 'root', '', 'pro-finder') or die('Erro de conexão: '. mysqli_connect_error());
+require_once '../../../../general_features/bdConnect.php';
 
 $id_professional = $_POST['id_professional'];
 
@@ -15,6 +15,6 @@ $connect->query("DELETE FROM `professional` WHERE `id_professional` = '$id_profe
 
 echo "<script>alert('Perfil excluído com sucesso!');</script>";
 
-echo "<meta http-equiv='refresh' content='0; url=index.php'>";
+echo "<meta http-equiv='refresh' content='0; url=../../../index.php'>";
 
 ?>

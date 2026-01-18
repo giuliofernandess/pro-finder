@@ -1,5 +1,5 @@
 <?php
-$connect = mysqli_connect('localhost', 'root', '', 'pro-finder') or die('Erro de conexão'. mysqli_connect_error());
+require_once 'bdConnect.php';
 
 if (isset($_POST["type"])) {
     if ($_POST["type"] == "states") {

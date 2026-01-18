@@ -2,7 +2,7 @@
 
 session_start();
 
-$connect = mysqli_connect('localhost', 'root', '', 'pro-finder') or die('Erro de conexão'. mysqli_connect_error());
+require_once '../../general_features/bdConnect.php';
 
 $conditions = [];
 
@@ -40,17 +40,19 @@ $result = $connect->query($sql);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profissionais - Pro Finder</title>
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/professionals.css">
+  <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../../css/professionals.css">
+  <link rel="stylesheet" href="../../css/style.css">
 </head>
 
 <body>
 
   <!-- header -->
   <div class="header">
-      <a href="index.php"><img src="images/logo.png" alt="ProFinder Logo" class="header-logo mb-2"></a>
+      <a href="../index.php"><img src="../../images/logo.png" alt="ProFinder Logo" class="header-logo mb-2"></a>
       <h2 class="header-title">Buscar Profissionais</h2>
   </div>
 
@@ -101,9 +103,9 @@ $result = $connect->query($sql);
                     <div class="col-12">
                         <form method="post" action="professionalProfile.php" class="card card-custom p-3 d-flex flex-row align-items-center">
                             <?php if (empty($res['profile_image'])): ?>
-                                <img src="images/anonymous-user.jpg" alt="Foto de Perfil" class="profile-img me-3">
+                                <img src="../../images/anonymous-user.jpg" alt="Foto de Perfil" class="profile-img me-3">
                             <?php else: ?>
-                                <img src="images/profile-images/<?php echo $res['profile_image'] ?>" alt="img" class="profile-img me-3">
+                                <img src="../../images/profile-images/<?php echo $res['profile_image'] ?>" alt="img" class="profile-img me-3">
                             <?php endif; ?>
                             <div class="flex-grow-1">
                                 <input type="hidden" name="id_professional" value="<?php echo $id_professional ?>">
@@ -121,7 +123,7 @@ $result = $connect->query($sql);
                                 if (isset($_SESSION['email'])) { ?>
                                      <button class="btn btnSeeProfile">Ver Perfil</button>
                                 <?php } else { ?>
-                                     <a href="login.php" class="btn btnSeeProfile">Ver Perfil</a>
+                                     <a href="../Login/login.php" class="btn btnSeeProfile">Ver Perfil</a>
                                 <?php } ?>
                                  
                         </form>
@@ -132,19 +134,11 @@ $result = $connect->query($sql);
   </main>
 
   <!-- Footer -->
-  <footer>
-    <div class="social-media-icons">
-      <span class="icon-instagram"><a href="#"><img src="images/footer/icon-instagram.png"
-            alt="Icon Instagram"></a></span>
-      <span class="icon-tiktok"><a href="#"><img src="images/footer/icon-tiktok.png" alt="Icon Tiktok"></a></span>
-      <span class="icon-twitter-x"><a href="#"><img src="images/footer/icon-x.png" alt="Icon X"></a></span>
-    </div>
-    <div class="small">Info - Suporte - Marketing</div>
-    <div class="small">Termos de uso - Política de Privacidade</div>
-    <div class="small">© 2025 ProFinder</div>
-  </footer>
+  <?php require_once '../../general_features/footer.php' ?>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
+        </script>
 </body>
 
 </html>

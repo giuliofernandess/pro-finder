@@ -9,7 +9,7 @@ $availability = $_POST['availability'];
 $link = $_POST['link'];
 $biography = $_POST['biography'];
 
-$connect = mysqli_connect('localhost', 'root', '', 'pro-finder',) or die('Erro de conexão: '. mysqli_connect_error());
+require_once '../../../general_features/bdConnect.php';
 
 $sql = "INSERT INTO `professional` (`category`, `profession`, `neighborhood`, `address`, `availability`, `link`, `biography`) 
         VALUES ('$category', '$profession', '$neighborhood', '$address', '$availability', '$link', '$biography')";
@@ -30,7 +30,7 @@ if ($result) {
     echo "<script type ='text/javascript'>
         alert('Parabéns! Você agora é um profissional Pro Finder.');
         </script>";
-    echo "<meta http-equiv='refresh' content='0; url=profile.php'>";
+    echo "<meta http-equiv='refresh' content='0; url=../profile.php'>";
 } else {
     echo "Erro ao atualizar: " . $connect->error;
 }

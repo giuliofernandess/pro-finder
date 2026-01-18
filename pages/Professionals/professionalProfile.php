@@ -3,7 +3,7 @@
 session_start();
 
   $id_professional = $_POST['id_professional'];
-  $connect = mysqli_connect('localhost', 'root', '', 'pro-finder');
+  require_once '../../general_features/bdConnect.php';
   
   function printInfoPersonal($sql) {
     global $connect;
@@ -49,10 +49,10 @@ session_start();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Perfil Profissional - Pro Finder</title>
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/profile.css">
     <style>
         body {
             background: linear-gradient(135deg, #e0f7fa, #ffffff);
@@ -99,6 +99,12 @@ session_start();
         .info-item p {
           margin: 0;
         }
+
+        @media screen and (min-width: 768px) {
+            body {
+                padding: 50px 0;
+            }
+        }
     </style>
   </head>
   <body>
@@ -112,9 +118,9 @@ session_start();
         <!-- Foto do Usuário Logado -->
         <div class="profile-header">
             <?php if (empty($res['profile_image'])): ?>
-                <img src="images/anonymous-user.jpg" alt="Foto de Perfil">
+                <img src="../../images/anonymous-user.jpg" alt="Foto de Perfil">
             <?php else: ?>
-            <img src="images/profile-images/<?php echo $res['profile_image'] ?>"
+            <img src="../../images/profile-images/<?php echo $res['profile_image'] ?>"
                 alt="Foto de Perfil">
             <?php endif; ?>
         </div>

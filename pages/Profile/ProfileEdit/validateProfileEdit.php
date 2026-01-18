@@ -15,7 +15,7 @@ $link = $_POST['link'];
 $biography = $_POST['biography'];
 $id_professional = $_POST['id_professional'];
 
-$connect = mysqli_connect('localhost', 'root', '', 'pro-finder') or die('Erro de conexão: ' . mysqli_connect_error());
+require_once '../../../general_features/bdConnect.php';
 
 // Verifica se a imagem foi enviada corretamente
 if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
@@ -26,7 +26,7 @@ if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
     // Gera nome único para evitar conflitos
     $newFileName = uniqid('profile_', true) . '.' . $fileExtension;
 
-    $uploadFileDir = 'images/profile-images/';
+    $uploadFileDir = '../../../images/profile-images/';
     $destPath = $uploadFileDir . $newFileName;
 
     // Move o arquivo para a pasta
@@ -61,7 +61,7 @@ if (empty($biography)) {
     alert('Seus dados foram editados!');
     </script>";
 
-    echo "<meta http-equiv='refresh' content='0; url=profile.php'>";
+    echo "<meta http-equiv='refresh' content='0; url=../profile.php'>";
 } else {
     $sql = "UPDATE `professional` SET `category`='$category', `profession`='$profession', `neighborhood`='$neighborhood', `address`='$address', `availability`='$availability', `link`='$link', `biography`='$biography' WHERE `id_professional` = '$id_professional'";
 
@@ -71,7 +71,7 @@ if (empty($biography)) {
     alert('Seus dados foram editados!');
     </script>";
 
-    echo "<meta http-equiv='refresh' content='0; url=profile.php'>";
+    echo "<meta http-equiv='refresh' content='0; url=../profile.php'>";
 }
 
 ?>

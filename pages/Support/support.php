@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Suporte - ProFinder</title>
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <script src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/form.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <script src="../../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../css/form.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <style>
         body, html {
             height: 100vh;
@@ -21,7 +21,7 @@
 
     <!-- Logo -->
     <div class="logo">
-        <a href="index.php"><img src="images/logo.png" alt="Logo"></a>
+        <a href="../index.php"><img src="../../images/logo.png" alt="Logo"></a>
     </div>
 
     <!-- Form Container -->

@@ -11,6 +11,6 @@ echo "<script type ='text/javascript'>
     alert('Logout efetuado com sucesso!');
     </script>";
 
-echo "<meta http-equiv='refresh' content='0; url=index.php'>";
+echo "<meta http-equiv='refresh' content='0; url=../../index.php'>";
 
 ?>
